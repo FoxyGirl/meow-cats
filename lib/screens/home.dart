@@ -35,6 +35,37 @@ class HomeScreen extends StatelessWidget {
             Text(user.email, style: textTheme.headline6),
             const SizedBox(height: 4.0),
             Text(user.name ?? '', style: textTheme.headline5),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: RaisedButton(
+                  key: const Key('start_raisedButton'),
+                  onPressed: () => navigator.push<void>(MarketPlace().route),
+                  textColor: Colors.white,
+                  padding: const EdgeInsets.all(0),
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: <Color>[
+                          Color(0xFF0D47A1),
+                          Color(0xFF1976D2),
+                          Color(0xFF42A5F5),
+                        ],
+                      ),
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 8,
+                      horizontal: 20,
+                    ),
+                    child: Text(
+                      'Let`s go!'.toUpperCase(),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    ),
+                  )),
+            ),
           ],
         ),
       ),
